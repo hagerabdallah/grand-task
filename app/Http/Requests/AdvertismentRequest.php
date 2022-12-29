@@ -18,6 +18,7 @@ class AdvertismentRequest extends FormRequest
                 'id' => 'required|exists:App\Models\Advertisment',
             ],
             'POST' => [
+                'user_id'=>'required|exists:App\Models\User',
                 'advertisment_type_id'=>'required|exists:App\Models\AdvertismentType,id',
                 'category_id'=>'required|exists:App\Models\Category,id',
                 'tags'=>'required|exists:App\Models\Tag,id',
@@ -28,8 +29,9 @@ class AdvertismentRequest extends FormRequest
 
             ],
             'PUT' => [
-                'advertisment_type_id'=>'required|exists:App\Models\AdvertismentType',
-                'category_id'=>'required|exists:App\Models\Category',
+                'id' => 'required|exists:App\Models\Advertisment',
+                'advertisment_type_id'=>'required|exists:App\Models\AdvertismentType,id',
+                'category_id'=>'required|exists:App\Models\Category,id',
                 'tags'=>'required|exists:App\Models\Tag,id',
                 'title'=>'required',
                 'description'=>'required',
