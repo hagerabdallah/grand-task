@@ -18,7 +18,7 @@ class Advertisment extends Model
     }
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'advertisment_tag');
+        return $this->belongsToMany(Tag::class,'advertisment_tag');
     }
     public function user(){
         return $this->belongsTo(User::class);

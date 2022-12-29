@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User_API\{CategoryController,
     TagController,AdvertismentTypeController,
-    AdvertismentController};
+    AdvertismentController,UserController};
 
 /*
 |--------------------------------------------------------------------------
@@ -52,8 +52,9 @@ Route::prefix('/advertisment')->group(function () {
     Route::get('/edit'         , [AdvertismentController::class, 'edit']);
     Route::PUT('/update'       , [AdvertismentController::class, 'update']);
     Route::DELETE('/delete'    , [AdvertismentController::class, 'delete']);
-    Route::get('/filter'        , [AdvertismentController::class, 'filter']);
-
-
+    Route::get('/filter'       , [AdvertismentController::class, 'filter']);
+});
+Route::prefix('/user')->group(function () {
+    Route::get('/index'        , [UserController::class, 'index']);
 });
 

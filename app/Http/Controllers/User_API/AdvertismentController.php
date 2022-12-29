@@ -69,6 +69,8 @@ class AdvertismentController extends Controller
         $advertisment->delete();
         return $this->returnSuccessMessage("advertisment deleted successfully!");
     }
+
+    //filter by tag or category or both
     public function filter(){
         $query = Advertisment::query()->with('user','category','tags');
         $query->when(request('tag') != null , function ($q)  {
