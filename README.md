@@ -4,6 +4,7 @@ Clone this repository
  git clone https://github.com/hagerabdallah/grand-task.git
  
  Run the command below to initialize. Do not forget to configure your .env file.
+ **i use mailtrap for sending mails.
  
  php artisan migrate
  
